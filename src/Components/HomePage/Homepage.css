@@ -1,0 +1,113 @@
+.homepage-story {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  background: #071019;
+  color: #ffffff;
+  overflow-x: hidden;
+  overflow-y: auto;
+  isolation: isolate;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overscroll-behavior-y: contain;
+  scrollbar-width: none;
+}
+
+.homepage-story::-webkit-scrollbar {
+  display: none;
+}
+
+.homepage-scroll-page {
+  position: relative;
+  min-height: 100%;
+}
+
+.homepage-scroll-page__track {
+  display: grid;
+  width: 100%;
+}
+
+.homepage-progress {
+  position: fixed;
+  top: 50%;
+  right: clamp(0.8rem, 2vw, 1.8rem);
+  z-index: 24;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(12px, -50%, 0);
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+.homepage-progress.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate3d(0, -50%, 0);
+}
+
+.homepage-progress__dots {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.85rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(5, 14, 22, 0.22);
+  backdrop-filter: blur(14px);
+}
+
+.homepage-progress__dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.homepage-progress__dot:hover {
+  transform: scale(1.12);
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.homepage-progress__dot.is-active {
+  background: #ffffff;
+  box-shadow:
+    0 0 0 6px rgba(255, 255, 255, 0.12),
+    0 0 18px rgba(255, 255, 255, 0.25);
+  transform: scale(1.08);
+}
+
+@media (max-width: 960px) {
+  .homepage-progress {
+    right: 0.65rem;
+    gap: 0.65rem;
+  }
+
+  .homepage-progress__dots {
+    gap: 0.58rem;
+    padding: 0.7rem 0.42rem;
+  }
+
+  .homepage-progress__dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (max-width: 720px) {
+  .homepage-progress {
+    display: none;
+  }
+}

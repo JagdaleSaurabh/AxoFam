@@ -1,0 +1,614 @@
+.axolittle-banner-content h1,
+.about-intro-div h2,
+.about-nft-collection h2,
+.nft-collections-collections h2,
+.full-collections-nft h2,
+.roadmap-intro h2,
+section.roadmap h2,
+.roadmap-journey__intro h2,
+.faq h2:not(.accordion-header),
+.newsletter h2,
+.planetono-copy h2,
+.featured-merch__title,
+.about-game-container h2,
+.roadmap-quarters__intro h2,
+.site-footer__brand h2,
+.team-section__title,
+.partners-showcase__intro h2,
+.footer-blizzard-left h2 {
+  font-family: "Anton";
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1.3px #000;
+  text-shadow: 3px 3.1px 0 #000;
+  letter-spacing: 4px;
+  color: #fff !important;
+  font-size: clamp(2.5rem, 6vw, 7rem) !important;
+}
+.about-game-container h2 {
+  -webkit-text-stroke: 0.5px #000000;
+  text-shadow: 3px 3.1px 1px #000;
+  letter-spacing: 5px;
+}
+.axolittle-banner-content {
+  /* width: min(100%, 68rem);
+  max-width: calc(100% - 2rem);
+  padding: 5rem 1.5rem 0;
+  position: absolute; */
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  color: #fff;
+  text-align: center;
+}
+
+.banner-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 52rem;
+  isolation: isolate;
+}
+
+.banner-hero > .container {
+  position: relative;
+  z-index: 3;
+  min-height: 50rem;
+}
+
+.banner-bubbles {
+  position: absolute;
+  inset: 0 0 8.5rem 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to top,
+    transparent 0%,
+    rgba(0, 0, 0, 0.213) 16%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  mask-image: linear-gradient(
+    to top,
+    transparent 0%,
+    rgba(0, 0, 0, 0.9) 16%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.banner-bubble {
+  position: absolute;
+  left: var(--bubble-left);
+  bottom: -10rem;
+  width: var(--bubble-size);
+  height: var(--bubble-size);
+  opacity: 0;
+  /* background: red; */
+  animation: bannerBubbleRise var(--bubble-duration) linear infinite;
+  animation-delay: var(--bubble-delay);
+  will-change: transform, opacity;
+  filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.14));
+}
+
+.banner-bubble::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.196);
+  /* background: radial-gradient(
+    circle at 34% 30%,
+    #ffffffdb 0%,
+    rgba(255, 255, 255, 0.684) 18%,
+    rgba(167, 229, 255, 0.387) 36%,
+    rgba(62, 155, 231, 0.08) 66%,
+    rgba(62, 155, 231, 0) 100%
+  ); */
+
+  background: radial-gradient(
+    circle at 34% 30%,
+    #ffffffa8 20%,
+    #ffffff74 40%,
+    rgba(255, 255, 255, 0.583) 18%,
+    rgba(247, 247, 247, 0.503) 36%,
+    rgba(164, 220, 255, 0.334) 66%,
+    rgba(62, 146, 231, 0.605) 100%
+  );
+  box-shadow:
+    inset -10px -14px 22px rgba(31, 164, 230, 0.574),
+    inset 10px 12px 14px rgba(255, 255, 255, 0.12),
+    0 0 22px rgba(0, 166, 255, 0.847);
+}
+
+.banner-bubble::after {
+  content: "";
+  position: absolute;
+  top: 18%;
+  left: 22%;
+  width: 16%;
+  height: 16%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  filter: blur(3px);
+}
+
+@keyframes bannerBubbleRise {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.86);
+    opacity: 0;
+  }
+
+  12% {
+    opacity: calc(var(--bubble-opacity) * 0.95);
+  }
+
+  50% {
+    transform: translate3d(var(--bubble-drift), -40vh, 0) scale(1);
+    opacity: var(--bubble-opacity);
+  }
+
+  100% {
+    transform: translate3d(calc(var(--bubble-drift) * -0.65), -118vh, 0)
+      scale(1.04);
+    opacity: 0;
+  }
+}
+
+.partner-wave {
+  /* position: absolute; */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  line-height: 0;
+  pointer-events: none;
+}
+
+.partner-wave img {
+  display: block;
+}
+
+.axolittle-banner-content h1 {
+  font-weight: 500;
+  line-height: 1;
+  font-size: 8rem !important;
+  max-width: 90%;
+  margin: 0 auto;
+  padding-top: 6rem;
+}
+.axolittle-banner-content p,
+.about-intro-div p {
+  color: #1e1e1e;
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: quicksand;
+  letter-spacing: 1px;
+}
+.axolittle-banner-content p {
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 1.4;
+  max-width: 90%;
+  margin: 0.75rem auto 0;
+}
+.banner-bottom-image {
+  /* position: absolute; */
+  z-index: 3;
+  /* width: min(30rem, 62vw); */
+  /* left: 50%;
+  bottom: 0.75rem;
+  transform: translateX(-50%);
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; */
+  width: 100%;
+}
+.axo-home-page-banner-section {
+  bottom: -10px !important;
+}
+.banner-bottom-image__img {
+  display: flex;
+  width: 40%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  /* text-align: center;filter: drop-shadow(2px 4px 6px #61cae1); */
+  /* padding-top: 2rem; */
+}
+.axo-button-cont {
+  background-color: #0c4e90;
+  display: inline-block;
+  padding: 12px 30px;
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  letter-spacing: 0.25px;
+  /* -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out; */
+}
+.axo-button-cont a {
+  color: #fff;
+  font-size: 20px !important;
+  text-decoration: none;
+}
+#cloudBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.svg-seq {
+  width: 100%;
+  height: auto;
+}
+.about-intro-div {
+  text-align: justify;
+  padding: 100px 0 10px 0;
+  width: 90%;
+  margin: auto;
+}
+
+.about-intro-div h2,
+.newsletter h2,
+.about-nft-collection h2 {
+  font-size: 40px;
+  font-weight: 500;
+  text-transform: uppercase !important;
+}
+.about-intro {
+  position: relative;
+}
+.cloud-1 {
+  position: absolute;
+  top: 0;
+  left: 40%;
+  z-index: -1;
+  width: 15%;
+}
+.cloud-2 {
+  position: absolute;
+  top: 30%;
+  z-index: -1;
+  right: 1%;
+  width: 15%;
+  transform: rotate(25deg);
+}
+.cloud-4 {
+  position: absolute;
+  bottom: 15%;
+  z-index: -1;
+  width: 15%;
+  left: 0%;
+}
+.axolittle-banner-content,
+.about-intro,
+.about-intro-div {
+  line-height: normal;
+}
+.banner-art {
+  line-height: 0;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: -1px;
+}
+
+.banner-art::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: #fff;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.svg-seq,
+#cloudBackground svg {
+  display: block;
+}
+.svg-seq,
+#cloudBackground svg {
+  display: block;
+}
+
+section svg {
+  display: block;
+  width: 100%;
+}
+.banner-hero .partners-foot svg {
+  width: max-content;
+}
+.partners {
+  overflow: hidden;
+  margin-top: -12rem;
+}
+@media (max-width: 550px) {
+  .banner-hero {
+    min-height: 40rem;
+  }
+
+  .banner-bubble {
+    bottom: -7rem;
+    width: calc(var(--bubble-size) * 0.52);
+    height: calc(var(--bubble-size) * 0.52);
+  }
+
+  .banner-bubbles {
+    inset: 0 0 5.5rem 0;
+  }
+
+  .banner-hero > .container {
+    position: relative;
+    z-index: 3;
+    min-height: 36rem;
+  }
+  .axolittle-banner-content h1,
+  .about-intro-div h2,
+  .about-nft-collection h2,
+  .nft-collections-collections h2,
+  .full-collections-nft h2,
+  .roadmap-intro h2,
+  section.roadmap h2,
+  .roadmap-journey__intro h2,
+  .faq h2:not(.accordion-header),
+  .newsletter h2,
+  .planetono-copy h2,
+  .featured-merch__title,
+  .about-game-container h2,
+  .roadmap-quarters__intro h2,
+  .site-footer__brand h2,
+  .team-section__title,
+  .partners-showcase__intro h2,
+  .footer-blizzard-left h2,
+  .hero-content h1,
+  .about-intro-div h2,
+  .about-nft-collection h2,
+  .nft-collections-collections h2,
+  .full-collections-nft h2,
+  .roadmap-intro h2,
+  .roadmap-journey__intro h2,
+  section.roadmap h2,
+  .roadmap-quarters__intro h2,
+  .faq h2:not(.accordion-header),
+  .team-section__title,
+  .featured-merch__title,
+  .newsletter h2,
+  .footer-blizzard-left h2 {
+    -webkit-text-stroke: 1.3px #000;
+    text-shadow: 2px 2.1px 0 #000 !important;
+  }
+
+  .banner-art {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    margin-bottom: 0;
+  }
+
+  .banner-art .svg-seq,
+  .banner-art #cloudBackground,
+  .banner-art #cloudBackground svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .banner-art .svg-seq {
+    object-fit: cover;
+  }
+
+  .banner-bottom-image {
+    /* width: min(17rem, 58vw); */
+
+    left: 50%;
+    bottom: 2rem;
+    max-width: none;
+  }
+  .banner-bottom-image__img {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 0rem;
+  }
+  .axolittle-banner-content {
+    /* width: min(560px, calc(100% - 1.5rem)); */
+    padding: 4rem 0.75rem 0;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 5;
+  }
+  section.roadmap {
+    margin-top: 0rem !important;
+  }
+  .axolittle-banner-content h1 {
+    padding-top: 3rem;
+    font-size: 3.5rem !important;
+    line-height: 0.98;
+    letter-spacing: 1.5px;
+    max-width: 100%;
+    /* max-width: 9ch; */
+  }
+  .axolittle-banner-content p {
+    padding: 0;
+    margin-top: 0.85rem;
+    margin-right: auto;
+    line-height: 1.45;
+    font-size: 0.9rem;
+    color: #ffffff;
+    max-width: 100%;
+    letter-spacing: 0.2px;
+    width: 100%;
+    margin-bottom: 0 !important;
+    text-align: center;
+  }
+  .axo-button-cont {
+    margin-top: 1rem;
+    padding: 0.55em 1em;
+    border-radius: 6px;
+  }
+  .axo-button-cont a {
+    display: inline-block;
+    font-size: 0.95rem !important;
+    line-height: 1.1;
+  }
+  #cloudBackground {
+    right: 0;
+  }
+
+  .about-intro-div {
+    width: min(680px, calc(100% - 2rem));
+    padding: 2.5rem 0 1.5rem;
+    text-align: left;
+  }
+
+  .about-intro-div h2 {
+    font-size: clamp(1.75rem, 7vw, 2.5rem) !important;
+  }
+
+  .about-intro-div p,
+  .view-full-collection-p a {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+    text-align: left;
+    text-transform: none;
+  }
+
+  .cloud-1,
+  .cloud-2,
+  .cloud-4 {
+    display: none;
+  }
+  .banner-hero .partner-wave {
+    margin-left: -5rem;
+    width: 70rem;
+  }
+  .shop-showcase-card__thumb {
+    height: 30px !important;
+    width: 30px !important;
+  }
+  .shop-lightbox__thumbs {
+    display: flex;
+    gap: 2px !important;
+  }
+  .shop-lightbox__close {
+    font-size: 20px !important;
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .shop-lightbox__header h3 {
+    margin: 0 !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner-bubble {
+    animation: none;
+    opacity: 0.14;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@media (min-width: 550px) and (max-width: 990px) {
+  .banner-hero,
+  .banner-hero > .container {
+    min-height: 46rem;
+  }
+  .banner-hero .partner-wave {
+    margin-left: -5rem;
+    width: 54rem;
+  }
+  .banner-bottom-image {
+    /* width: min(22rem, 42vw); */
+    left: 50%;
+    bottom: 1.5rem;
+  }
+  .banner-bottom-image__img {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .axolittle-banner-content {
+    width: min(70%, 48rem);
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 8.25rem;
+  }
+  .axolittle-banner-content h1 {
+    font-size: 5rem !important;
+    padding-top: 0;
+  }
+  .navbar:after {
+    bottom: -25px;
+  }
+  .axolittle-banner-content p {
+    padding: 0px 0;
+    line-height: 1.5;
+    text-transform: capitalize;
+    font-size: 16px;
+  }
+  .axo-button-cont a {
+    font-size: 16px;
+  }
+  .axo-button-cont {
+    padding: 0.8em 1.5em;
+  }
+}
+
+@media (max-width: 390px) {
+  .axolittle-banner-content {
+    /* padding-top: 8.2rem; */
+  }
+
+  .axolittle-banner-content h1 {
+    font-size: 3rem !important;
+    margin-top: 3rem;
+    max-width: 100% !important;
+    padding-top: 3rem;
+  }
+
+  .axolittle-banner-content p,
+  .about-intro-div p {
+    font-size: 0.86rem;
+  }
+  .axolittle-banner-content {
+    padding: 3.5rem 0.75rem 0;
+  }
+  .banner-bottom-image {
+    /* width: min(14rem, 60vw); */
+    bottom: 2.25rem;
+  }
+}
+
+@media (min-width: 990px) and (max-width: 1100px) {
+  .axolittle-banner-content {
+    padding: 4.5rem 1rem 0;
+  }
+  .hero-graphic {
+    margin-top: 6rem;
+  }
+  .axolittle-banner-content h1 {
+    font-size: 7rem !important;
+    margin-top: 0;
+    padding-top: 3rem;
+  }
+  .axolittle-banner-content p {
+    line-height: 1.4;
+  }
+  .about-intro-div {
+    width: 80%;
+  }
+  .site-footer .footer-top {
+    padding: 12% 5% 1px 5%;
+  }
+}

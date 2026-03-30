@@ -1,0 +1,239 @@
+.lower-foot {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  /* min-height: clamp(640px, 46vw, 1480px); */
+}
+
+#svgFoot,
+#footerAnimation {
+  line-height: 0;
+}
+
+#svgFoot {
+  position: relative;
+  z-index: 0;
+}
+
+#svgFoot svg,
+#footerAnimation svg {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+}
+
+.site-footer {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(-920px, -28vw, -460px);
+  /* background: linear-gradient(180deg, #fbf7ea 0%, #f8f2e3 100%); */
+}
+.site-footer__eyebrow-img {
+  width: 30%;
+}
+
+.site-footer__top-wave,
+.site-footer__bottom-wave {
+  line-height: 0;
+}
+
+.site-footer__top-wave svg,
+.site-footer__bottom-wave svg {
+  display: block;
+  width: 100%;
+}
+
+.site-footer__body {
+  position: relative;
+  min-height: 500px;
+  margin-top: 0;
+}
+
+.site-footer__content {
+  position: relative;
+  z-index: 1;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  text-align: center;
+  padding: 8rem 1.5rem 1rem;
+}
+
+.site-footer__brand {
+  max-width: 100%;
+}
+
+.site-footer__eyebrow {
+  margin: 0 0 0.8rem;
+  font-family: quicksand;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #111;
+}
+
+.site-footer__brand h2 {
+  margin: 0;
+  font-family: "Anton";
+  font-size: clamp(3rem, 5vw, 5.8rem);
+  line-height: 1;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
+  -webkit-text-stroke: 1.5px #111;
+  /* text-shadow: 4px 4px 0 #111; */
+}
+
+.site-footer__copy {
+  margin: 1.1rem auto 0;
+  max-width: 38ch;
+  color: #1a1a1a;
+  font-family: quicksand;
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.site-footer__socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.site-footer__social {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  border: 1.5px solid #111;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 2rem;
+  box-shadow: 3px 5px 0 #111;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    background 220ms ease;
+}
+
+.site-footer__social span {
+  font-family: "Anton";
+  font-size: 2rem;
+}
+
+.site-footer__social:hover {
+  transform: translateY(2px);
+  box-shadow: 1px 2px 0 #111;
+  background: #d2f2ff;
+}
+
+.site-footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 0px;
+  margin-top: 2rem;
+  gap: 1.6rem;
+}
+
+.site-footer__nav a {
+  color: #111;
+  text-decoration: none;
+  font-family: quicksand;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.site-footer__legal {
+  margin: 0;
+  color: rgba(17, 17, 17, 0.82);
+  font-family: quicksand;
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.site-footer__legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem 1.1rem;
+}
+
+.site-footer__legal-links a {
+  color: rgba(17, 17, 17, 0.82);
+  text-decoration: none;
+  font-family: quicksand;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+@media (max-width: 767px) {
+  .lower-foot {
+    /* min-height: 760px; */
+  }
+
+  .site-footer__body,
+  .site-footer__content {
+    min-height: 440px;
+  }
+
+  .site-footer__content {
+    padding: 7rem 1rem 6rem;
+  }
+
+  .site-footer__social {
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+  }
+  .site-footer__socials img {
+    width: 25px !important;
+  }
+
+  .site-footer__nav {
+    gap: 1rem 1.25rem;
+  }
+  .team-card__content h3,
+  .roadmap-quarter-card h3,
+  .roadmap-quarter-item h4 {
+    font-size: 20px;
+  }
+  .site-footer__nav a,
+  .roadmap-quarter-card__pill,
+  .team-card__content p,
+  .legend-pill {
+    font-size: 0.9rem;
+  }
+  .site-footer__eyebrow-img {
+    width: 60%;
+  }
+
+  .site-footer__legal-links a {
+    font-size: 0.86rem;
+  }
+}
+.lower-foot--alt-bg #svgFoot {
+  background-color: #f5fbfe;
+}
+
+.lower-foot--game-bg #svgFoot {
+  background-color: #fff;
+}
+
+@media (max-width: 1200px) {
+  .site-footer {
+    margin-top: clamp(-760px, -40vw, -340px);
+  }
+
+  .lower-foot--shop .site-footer {
+    /* margin-top: clamp(-620px, -28vw, -240px); */
+  }
+}
