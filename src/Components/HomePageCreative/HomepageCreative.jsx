@@ -73,12 +73,10 @@ const homeSections = [
 ];
 
 const homeNavItems = [
-  { id: "axofam", label: "AXOFAM", href: "#axofam" },
-  ...homeSections.map((section) => ({
-    id: section.id,
-    label: section.label,
-    href: `#${section.id}`,
-  })),
+  { id: "axofam", label: "AXOFAM", href: "/" },
+  { id: "game", label: "PLAY", href: "/axo-game" },
+  { id: "shop", label: "SHOP", href: "/shop" },
+  { id: "studio", label: "EXPLORE", href: "/axo-studio#home" },
 ];
 
 const HomepageCreative = ({ onNavigate }) => {
@@ -263,14 +261,14 @@ const HomepageCreative = ({ onNavigate }) => {
         <button
           type="button"
           className="creative-home__brand"
-          onClick={(event) => handleAction(event, "#axofam")}
+          onClick={(event) => handleAction(event, "/")}
         >
           <img
-            src="https://res.cloudinary.com/dbtsrjssc/image/upload/v1774966566/a_little_circle_202603311407_x3a0m3.webp"
+            src="https://res.cloudinary.com/dbtsrjssc/image/upload/v1774967875/enhance_this_iamge_2026033114301_2_xbao7m.webp"
             alt=""
             className="axo-face-logo"
           />{" "}
-          <span>AXOFAM</span>
+          {/* <span>AXOFAM</span> */}
         </button>
 
         <nav
@@ -282,7 +280,7 @@ const HomepageCreative = ({ onNavigate }) => {
               key={item.id}
               type="button"
               className={`creative-home__nav-link ${
-                activeSection === item.id ? "is-active" : ""
+                item.id === "axofam" ? "is-active" : ""
               }`}
               onClick={(event) => handleAction(event, item.href)}
             >

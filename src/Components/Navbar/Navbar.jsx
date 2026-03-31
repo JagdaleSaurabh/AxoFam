@@ -70,11 +70,11 @@ const Navbar = ({ onNavigate }) => {
             // onClick={(event) => handleAction(event, "#axofam")}
           >
             <img
-              src="https://res.cloudinary.com/dbtsrjssc/image/upload/v1774966566/a_little_circle_202603311407_x3a0m3.webp"
+              src="https://res.cloudinary.com/dbtsrjssc/image/upload/v1774967875/enhance_this_iamge_2026033114301_2_xbao7m.webp"
               alt=""
               className="axo-face-logo"
             />{" "}
-            <span>AXOFAM</span>
+            {/* <span>AXOFAM</span> */}
           </button>
           {/* <span className="navbar-brand-divider" aria-hidden="true" /> */}
           <button
