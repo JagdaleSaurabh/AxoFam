@@ -26,85 +26,8 @@
   overflow: hidden;
 }
 
-.axo-studio-rail {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 40;
-  width: 118px;
-  height: 100vh;
-  border-right: 1px solid rgba(17, 51, 79, 0.1);
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.94),
-      rgba(237, 248, 255, 0.92)
-    ),
-    rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(12px);
-  box-shadow: 8px 0 28px rgba(17, 51, 79, 0.08);
-}
-
-.axo-studio-rail__brand {
-  padding: 1.4rem 1rem 1.1rem;
-  color: #11334f;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1rem;
-  line-height: 1.2;
-}
-
-.axo-studio-rail__nav {
-  display: flex;
-  flex-direction: column;
-  padding-top: 0.8rem;
-}
-
-.axo-studio-rail__nav a {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  min-height: 62px;
-  padding: 0.9rem 0.8rem;
-  border-top: 1px solid rgba(17, 51, 79, 0.06);
-  color: rgba(17, 51, 79, 0.58);
-  font-family: "quicksand";
-  font-size: 0.78rem;
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: 0.06em;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition:
-    color 220ms ease,
-    background 220ms ease;
-}
-
-.axo-studio-rail__nav a.is-active {
-  color: #0b2442;
-  background: linear-gradient(
-    90deg,
-    rgba(12, 78, 144, 0.14),
-    rgba(121, 223, 255, 0.08),
-    transparent
-  );
-}
-
-.axo-studio-rail__dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 999px;
-  background: rgba(17, 51, 79, 0.22);
-  flex: 0 0 auto;
-}
-
-.axo-studio-rail__nav a.is-active .axo-studio-rail__dot {
-  background: var(--studio-blue);
-  box-shadow: 0 0 18px rgba(12, 78, 144, 0.32);
-}
-
 .axo-studio-horizontal-page {
   position: relative;
-  margin-left: 118px;
 }
 
 .axo-studio-horizontal-page__track {
@@ -115,7 +38,7 @@
 
 .axo-studio-panel {
   position: relative;
-  width: calc(100vw - 118px);
+  width: 100vw;
   min-height: 100vh;
   display: grid;
   grid-template-columns: minmax(0, 1.06fr) minmax(360px, 0.94fr);
@@ -535,30 +458,6 @@
 @media (max-width: 960px) {
   .axo-studio-page {
     overflow: auto;
-  }
-
-  .axo-studio-rail {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    height: auto;
-    border-right: 0;
-    border-bottom: 1px solid rgba(17, 51, 79, 0.08);
-  }
-
-  .axo-studio-rail__nav {
-    overflow-x: auto;
-    flex-direction: row;
-  }
-
-  .axo-studio-rail__nav a {
-    min-width: 132px;
-    border-top: 0;
-    border-right: 1px solid rgba(17, 51, 79, 0.05);
-  }
-
-  .axo-studio-horizontal-page {
-    margin-left: 0;
   }
 
   .axo-studio-horizontal-page__track {

@@ -1,5 +1,6 @@
 import "./AxoGamePage.css";
 import { useEffect, useRef } from "react";
+import TypingHeading from "../TypingHeading/TypingHeading";
 
 const gameHighlights = [
   {
@@ -137,7 +138,7 @@ const AxoGamePage = ({ onNavigate }) => {
   return (
     // <main className="axo-game-page">
     <main className="axo-game-page parallax-surface" ref={pageRef}>
-      <section className="axo-game-video-fullscreen" data-parallax-section>
+      {/* <section className="axo-game-video-fullscreen" data-parallax-section>
         <video
           autoPlay
           loop
@@ -150,13 +151,13 @@ const AxoGamePage = ({ onNavigate }) => {
             type="video/mp4"
           />
         </video>
-      </section>
-      {/* <section className="axo-game-hero" data-parallax-section>
+      </section> */}
+      <section className="axo-game-hero" data-parallax-section>
         <div className="axo-game-hero__backdrop" aria-hidden="true" />
         <div className="axo-game-hero__shell">
           <div className="axo-game-hero__banner" data-reveal>
             <p className="axo-game-kicker text-light">Axo Game Worlds</p>
-            <h1>Four worlds. One adventure.</h1>
+            <TypingHeading as="h1" text="Four worlds. One adventure." />
             <p className="axo-game-hero__lede">
               Dive into the Axo Game universe with cinematic level design,
               playful energy, and immersive worlds full of mood and motion.
@@ -189,7 +190,7 @@ const AxoGamePage = ({ onNavigate }) => {
             style={{ width: "100%" }}
           />
         </div>
-      </section> */}
+      </section>
 
       {/* <section className="axo-game-video-band" data-parallax-section>
         <div className="axo-game-video-band__shell">
@@ -272,9 +273,12 @@ const AxoGamePage = ({ onNavigate }) => {
       <section className="axo-game-section axo-game-section--teal">
         <div className="axo-game-shell axo-game-section__intro" data-reveal>
           <p className="axo-game-kicker">Gameplay Preview</p>
-          <h2>
-            Epic battles. Legendary summons. <br /> Who will you choose first?
-          </h2>
+          <TypingHeading
+            as="h2"
+            text={
+              "Epic battles. Legendary summons.\nWho will you choose first?"
+            }
+          />
           <p className="axo-game-copy axo-game-copy--center axo-game-copy--center-parar">
             Experience the energy of Axo Ninja through a featured gameplay
             showcase designed to capture the thrill, style, and momentum of the
@@ -292,8 +296,8 @@ const AxoGamePage = ({ onNavigate }) => {
       </section>
 
       <section className="axo-game-hero" data-parallax-section>
-        <div className="axo-game-hero__backdrop" aria-hidden="true" />
-        <div className="axo-game-hero__shell">
+        {/* <div className="axo-game-hero__backdrop" aria-hidden="true" /> */}
+        {/* <div className="axo-game-hero__shell">
           <div className="axo-game-hero__banner" data-reveal>
             <p className="axo-game-kicker text-light">Axo Game Worlds</p>
             <h1>Four worlds. One adventure.</h1>
@@ -301,26 +305,55 @@ const AxoGamePage = ({ onNavigate }) => {
               Dive into the Axo Game universe with cinematic level design,
               playful energy, and immersive worlds full of mood and motion.
             </p>
-
-            {/* <div className="axo-game-actions">
-              <a
-                href="#level-worlds"
-                className="axo-game-button axo-game-button--primary"
-                onClick={handleScrollToWorlds}
-              >
-                Watch Worlds
-              </a>
-              <a
-                href="/shop"
-                className="axo-game-button axo-game-button--ghost"
-                onClick={(event) => handleNavigate(event, "/shop")}
-              >
-                Explore Shop
-              </a>
-            </div> */}
           </div>
-        </div>
-        <div className="axo-game-hero__curve" aria-hidden="true">
+        </div> */}
+        <section className="axo-game-video-fullscreen" data-parallax-section>
+          {" "}
+          <div className="axo-game-section__curve" aria-hidden="true">
+            <svg viewBox="0 0 1920 180" preserveAspectRatio="none">
+              <path
+                d="M0,55 C220,88 430,115 705,108 C1015,100 1248,35 1512,35 C1710,35 1820,52 1920,72 L1920,0 L0,0 Z"
+                fill="#ffffff"
+              />
+              <path
+                d="M0,57 C220,89 430,116 705,109 C1015,101 1248,36 1512,36 C1710,36 1820,53 1920,73"
+                fill="none"
+                stroke="rgba(166, 151, 214, 0.35)"
+                strokeWidth="4"
+              />
+            </svg>
+          </div>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="axo-game-video-fullscreen__video"
+          >
+            <source
+              src="https://res.cloudinary.com/dbtsrjssc/video/upload/v1774618283/Axoquest-Trim-Trim-ezgif.com-gif-maker_1_qo1rew.mp4"
+              type="video/mp4"
+            />
+          </video>{" "}
+          <div
+            className="axo-game-section__curve axo-game-section__curve--bottom axo-game-hero__curve--svg"
+            aria-hidden="true"
+          >
+            <svg viewBox="0 0 1920 180" preserveAspectRatio="none">
+              <path
+                d="M0,180 L0,112 C162,92 307,64 513,64 C759,64 938,132 1206,132 C1490,132 1678,58 1920,36 L1920,180 Z"
+                fill="#ffffff"
+              />
+              <path
+                d="M0,111 C162,91 307,63 513,63 C759,63 938,131 1206,131 C1490,131 1678,57 1920,35"
+                fill="none"
+                stroke="rgba(166, 151, 214, 0.35)"
+                strokeWidth="4"
+              />
+            </svg>
+          </div>
+        </section>
+        {/* <div className="axo-game-hero__curve" aria-hidden="true">
           <svg viewBox="0 0 1920 180" preserveAspectRatio="none">
             <path
               d="M0,180 L0,52 C162,32 307,4 513,4 C759,4 938,72 1206,72 C1490,72 1678,0 1920,0 L1920,180 Z"
@@ -333,7 +366,7 @@ const AxoGamePage = ({ onNavigate }) => {
               strokeWidth="3"
             />
           </svg>
-        </div>
+        </div> */}
       </section>
 
       {/* <section className="axo-game-section axo-game-section--cream">
@@ -445,7 +478,7 @@ const AxoGamePage = ({ onNavigate }) => {
         <div className="axo-game-shell axo-game-newsletter" data-reveal>
           <div className="axo-game-newsletter__content">
             <p className="axo-game-kicker">AxoNinja App</p>
-            <h2>Take Axo Fam adventures with you</h2>
+            <TypingHeading as="h2" text="Take Axo Fam adventures with you" />
             <p className="axo-game-copy axo-game-copy--center">
               Experience AxoNinja on mobile with faster access, smoother
               gameplay, and your adventure always within reach.

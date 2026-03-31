@@ -110,8 +110,14 @@ const TypingHeading = ({
     .join(" ");
 
   return (
-    <Tag ref={headingRef} className={classes} {...props}>
-      {displayText}
+    <Tag
+      ref={headingRef}
+      className={classes}
+      data-text={text}
+      aria-label={text}
+      {...props}
+    >
+      <span className="typing-heading__text">{displayText}</span>
     </Tag>
   );
 };

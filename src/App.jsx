@@ -11,7 +11,8 @@ import PrivacyPolicyPage from "./Components/LegalPages/PrivacyPolicyPage";
 import TermsOfServicePage from "./Components/LegalPages/TermsOfServicePage";
 import AxoGamePage from "./Components/AxoGamePage/AxoGamePage";
 import AxoStudioPage from "./Components/AxoStudio/AxoStudioPage";
-import Homepage from "./Components/HomePage/Homepage";
+import HomepageCreative from "./Components/HomePageCreative/HomepageCreative";
+import AboutPage from "./Components/AboutPage/AboutPage";
 
 // const Banner = lazy(() => import("./Components/Banner/Banner"));
 const Section1 = lazy(() => import("./Components/Section1/Section1"));
@@ -168,11 +169,9 @@ function App() {
       <div className="site-shell site-shell--shop">
         <AudioControl />
         {/* <Navbar onNavigate={handleNavigate} /> */}
-        <Homepage onNavigate={handleNavigate} />
-        {/* <Suspense fallback={null}>
-          <Faqs onNavigate={handleNavigate} />
-        </Suspense>
-        <Footer onNavigate={handleNavigate} /> */}
+        <HomepageCreative onNavigate={handleNavigate} />
+        <Faqs />
+        <Footer onNavigate={handleNavigate} />
       </div>
     );
   }
@@ -199,9 +198,22 @@ function App() {
         <Banner />
         <Suspense fallback={null}>
           <Section1 onNavigate={handleNavigate} />
-          <Faqs onNavigate={handleNavigate} />
+          <Faqs onNavigate={handleNavigate} mode="section" />
           <Footer onNavigate={handleNavigate} />
         </Suspense>
+      </div>
+    );
+  }
+
+  if (currentPath === "/faqs") {
+    return (
+      <div className="site-shell">
+        <AudioControl />
+        <Navbar onNavigate={handleNavigate} />
+        <Suspense fallback={null}>
+          <Faqs onNavigate={handleNavigate} mode="page" />
+        </Suspense>
+        <Footer onNavigate={handleNavigate} />
       </div>
     );
   }
@@ -239,11 +251,21 @@ function App() {
     );
   }
 
-  if (currentPath === "/axo-studio") {
+  if (currentPath === "/about") {
     return (
       <div className="site-shell">
         <AudioControl />
         <Navbar onNavigate={handleNavigate} />
+        <AboutPage onNavigate={handleNavigate} />
+        <Footer onNavigate={handleNavigate} />
+      </div>
+    );
+  }
+
+  if (currentPath === "/axo-studio") {
+    return (
+      <div className="site-shell">
+        <AudioControl />
         <AxoStudioPage onNavigate={handleNavigate} />
       </div>
     );
@@ -255,7 +277,7 @@ function App() {
       <Navbar onNavigate={handleNavigate} />
       <ShopPage onNavigate={handleNavigate} />
       <Suspense fallback={null}>
-        <Faqs onNavigate={handleNavigate} />
+        <Faqs onNavigate={handleNavigate} mode="section" />
       </Suspense>
       <Footer onNavigate={handleNavigate} />
     </div>

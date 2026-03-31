@@ -574,6 +574,7 @@
 }
 .axo-game-store-badge img {
   box-shadow: 0 5px 10px rgba(12, 32, 51, 0.16);
+  width: 8rem;
 }
 
 .axo-game-store-badge__eyebrow {

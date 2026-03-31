@@ -44,13 +44,25 @@ const Footer = ({ onNavigate }) => {
           <div className="site-footer__body">
             <div className="container site-footer__content" data-reveal="zoom">
               <div className="site-footer__brand">
-                <p className="site-footer__eyebrow">
+                {/* <p className="site-footer__eyebrow">
                   <img
                     className="site-footer__eyebrow-img"
                     src="https://res.cloudinary.com/dbtsrjssc/image/upload/v1774614545/axo_fam_icon_esjirk.svg"
                     alt=""
                   />
-                </p>
+                </p>{" "} */}
+                <button
+                  type="button"
+                  className="creative-home__brand mb-3"
+                  // onClick={(event) => handleAction(event, "#axofam")}
+                >
+                  <img
+                    src="https://res.cloudinary.com/dbtsrjssc/image/upload/v1774966566/a_little_circle_202603311407_x3a0m3.webp"
+                    alt=""
+                    className="axo-face-logo"
+                  />{" "}
+                  <span>AXOFAM</span>
+                </button>
                 <h2>Join the community</h2>
                 <p className="site-footer__copy">
                   Keep up with the Axofam community updates, progress, future
@@ -91,7 +103,7 @@ const Footer = ({ onNavigate }) => {
               <div className="site-footer__legal-links ">
                 {footerLegalLinks.map((link) => (
                   <a
-                    className="text-light"
+                    className="text-dark"
                     key={link.href}
                     href={link.href}
                     onClick={(event) => handleFooterNavigate(event, link.href)}
@@ -102,7 +114,7 @@ const Footer = ({ onNavigate }) => {
               </div>
             </div>
           </div>{" "}
-          <div className="footer-bot">
+          <div className="footer-bot footer-bot-footerr">
             {/* <div className="footer-legal">
             <i className="fa fa-regular fa-copyright fa-xs"></i> by
             Axolittles.io 2026

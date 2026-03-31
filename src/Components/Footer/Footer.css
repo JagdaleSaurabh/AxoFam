@@ -25,7 +25,7 @@
 .site-footer {
   position: relative;
   z-index: 1;
-  margin-top: clamp(-920px, -28vw, -460px);
+  /* margin-top: clamp(-920px, -28vw, -460px); */
   /* background: linear-gradient(180deg, #fbf7ea 0%, #f8f2e3 100%); */
 }
 .site-footer__eyebrow-img {
@@ -236,4 +236,8 @@
   .lower-foot--shop .site-footer {
     /* margin-top: clamp(-620px, -28vw, -240px); */
   }
+}
+.footer-bot-footerr {
+  position: absolute;
+  bottom: 0;
 }

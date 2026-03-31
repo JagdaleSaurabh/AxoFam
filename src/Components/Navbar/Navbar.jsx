@@ -25,6 +25,11 @@ const Navbar = ({ onNavigate }) => {
     onNavigate("/axo-game");
   };
 
+  const handleAboutClick = (event) => {
+    event.preventDefault();
+    onNavigate("/about");
+  };
+
   const handleWeb3Click = (event) => {
     event.preventDefault();
     onNavigate("/axo-web3");
@@ -33,6 +38,11 @@ const Navbar = ({ onNavigate }) => {
   const handleStudioClick = (event) => {
     event.preventDefault();
     onNavigate("/axo-studio#home");
+  };
+
+  const handleFaqsClick = (event) => {
+    event.preventDefault();
+    onNavigate("/faqs");
   };
 
   const handleHomeClick = (event) => {
@@ -44,7 +54,7 @@ const Navbar = ({ onNavigate }) => {
     <>
       <nav className="navbar navbar-expand-lg">
         <div className="container navbar-shell">
-          <a
+          {/* <a
             className="navbar-brand axo-little-logo"
             href="/"
             onClick={handleHomeClick}
@@ -53,7 +63,19 @@ const Navbar = ({ onNavigate }) => {
               src="https://res.cloudinary.com/dbtsrjssc/image/upload/v1774614545/axo_fam_icon_esjirk.svg"
               alt="axo logo "
             />
-          </a>
+          </a>{" "} */}
+          <button
+            type="button"
+            className="creative-home__brand"
+            // onClick={(event) => handleAction(event, "#axofam")}
+          >
+            <img
+              src="https://res.cloudinary.com/dbtsrjssc/image/upload/v1774966566/a_little_circle_202603311407_x3a0m3.webp"
+              alt=""
+              className="axo-face-logo"
+            />{" "}
+            <span>AXOFAM</span>
+          </button>
           {/* <span className="navbar-brand-divider" aria-hidden="true" /> */}
           <button
             className="navbar-toggler"
@@ -70,7 +92,7 @@ const Navbar = ({ onNavigate }) => {
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <a className="nav-link" href="/home" onClick={handleHomeClick}>
-                  Home
+                  AXOFAM
                 </a>
               </li>{" "}
               <li className="nav-item">
@@ -79,9 +101,18 @@ const Navbar = ({ onNavigate }) => {
                   href="/axo-game"
                   onClick={handleGameClick}
                 >
-                  Game
+                  PLAY
                 </a>
               </li>{" "}
+              {/* <li className="nav-item">
+                <a
+                  className="nav-link"
+                  href="/about"
+                  onClick={handleAboutClick}
+                >
+                  About
+                </a>
+              </li> */}
               <li className="nav-item">
                 <a
                   className="nav-link"
@@ -99,9 +130,14 @@ const Navbar = ({ onNavigate }) => {
                   href="/axo-studio"
                   onClick={handleStudioClick}
                 >
-                  Studio
+                  EXPLORE
                 </a>
               </li>
+              {/* <li className="nav-item">
+                <a className="nav-link" href="/faqs" onClick={handleFaqsClick}>
+                  FAQs
+                </a>
+              </li> */}
             </ul>
           </div>
         </div>

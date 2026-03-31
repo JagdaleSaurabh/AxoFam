@@ -8,8 +8,10 @@ const homePanelIds = new Set(homePanels.map((panel) => panel.id));
 const homeMenuItems = [
   { id: "home", index: "01", label: "Home", href: "/" },
   { id: "game", index: "02", label: "Game", href: "/axo-game" },
-  { id: "shop", index: "03", label: "Shop", href: "/shop" },
-  { id: "studio", index: "04", label: "Studio", href: "/axo-studio#home" },
+  // { id: "about", index: "03", label: "About", href: "/about" },
+  { id: "shop", index: "04", label: "Shop", href: "/shop" },
+  { id: "studio", index: "05", label: "Studio", href: "/axo-studio#home" },
+  // { id: "faqs", index: "06", label: "FAQs", href: "/faqs" },
 ];
 
 const Homepage = ({ onNavigate }) => {
@@ -33,7 +35,8 @@ const Homepage = ({ onNavigate }) => {
     const updateVisibility = () => {
       frameId = 0;
       const rect = page.getBoundingClientRect();
-      const nextVisible = rect.top < window.innerHeight * 0.8 && rect.bottom > 120;
+      const nextVisible =
+        rect.top < window.innerHeight * 0.8 && rect.bottom > 120;
 
       if (navVisibleRef.current !== nextVisible) {
         navVisibleRef.current = nextVisible;
@@ -108,8 +111,9 @@ const Homepage = ({ onNavigate }) => {
         });
 
         const nextActiveId =
-          [...panelVisibilityRef.current.entries()]
-            .sort((a, b) => b[1] - a[1])[0]?.[0] || homePanels[0].id;
+          [...panelVisibilityRef.current.entries()].sort(
+            (a, b) => b[1] - a[1],
+          )[0]?.[0] || homePanels[0].id;
 
         setActivePanelId(nextActiveId);
       },

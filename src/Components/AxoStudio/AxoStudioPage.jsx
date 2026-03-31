@@ -2,6 +2,8 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./AxoStudioPage.css";
+import HomeBurgerMenu from "../HomePage/HomeBurgerMenu";
+import TypingHeading from "../TypingHeading/TypingHeading";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -81,12 +83,35 @@ const studioPanels = [
   },
 ];
 
+const studioMenuItems = [
+  { id: "home-link", label: "Home", href: "/" },
+  { id: "game-link", label: "Game", href: "/axo-game" },
+  // { id: "about-link", label: "About", href: "/about" },
+  { id: "shop-link", label: "Shop", href: "/shop" },
+  { id: "studio-link", label: "Studio", href: "/axo-studio#home" },
+  // { id: "faqs", label: "FAQ", href: "/faqs" },
+];
+
 const AxoStudioPage = ({ onNavigate }) => {
   const [activePanelId, setActivePanelId] = useState(studioPanels[0].id);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pageRef = useRef(null);
   const horizontalSectionRef = useRef(null);
   const horizontalTrackRef = useRef(null);
   const panelRefs = useRef([]);
+
+  useEffect(() => {
+    if (!isMenuOpen) {
+      return undefined;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isMenuOpen]);
 
   useEffect(() => {
     const page = pageRef.current;
@@ -228,12 +253,23 @@ const AxoStudioPage = ({ onNavigate }) => {
     onNavigate(path);
   };
 
+  const handleSelectMenuItem = (item) => {
+    setIsMenuOpen(false);
+
+    if (onNavigate) {
+      onNavigate(item.href);
+      return;
+    }
+
+    window.location.assign(item.href);
+  };
+
   const renderPanelContent = (panel, index) => {
     if (panel.layout === "hero") {
       return (
         <div className="axo-studio-panel__hero-copy">
           {/* <p className="axo-studio-panel__eyebrow">{panel.eyebrow}</p> */}
-          <h1>{panel.title}</h1>
+          <TypingHeading as="h1" text={panel.title} />
           <p className="axo-studio-panel__accent-line">{panel.accentLine}</p>
           <div className="axo-studio-panel__hero-actions">
             <a
@@ -256,7 +292,7 @@ const AxoStudioPage = ({ onNavigate }) => {
         <div className="axo-studio-panel__editorial-grid">
           <div className="axo-studio-panel__copy">
             <p className="axo-studio-panel__eyebrow">{panel.eyebrow}</p>
-            <h2>{panel.title}</h2>
+            <TypingHeading as="h2" text={panel.title} />
             <p className="axo-studio-panel__accent-line axo-studio-panel__accent-line-title">
               {panel.accentLine}
             </p>
@@ -279,7 +315,7 @@ const AxoStudioPage = ({ onNavigate }) => {
       return (
         <div className="axo-studio-panel__video-copy">
           <p className="axo-studio-panel__eyebrow">{panel.eyebrow}</p>
-          <h2>{panel.title}</h2>
+          <TypingHeading as="h2" text={panel.title} />
           <p className="axo-studio-panel__accent-line">{panel.accentLine}</p>
           <p className="axo-studio-panel__video-note">{panel.description}</p>
         </div>
@@ -290,7 +326,7 @@ const AxoStudioPage = ({ onNavigate }) => {
       return (
         <div className="axo-studio-panel__image-focus-copy">
           <p className="axo-studio-panel__eyebrow">{panel.eyebrow}</p>
-          <h2>{panel.title}</h2>
+          <TypingHeading as="h2" text={panel.title} />
           <p className="axo-studio-panel__accent-line">{panel.accentLine}</p>
           <p className="axo-studio-panel__body">{panel.description}</p>
         </div>
@@ -302,7 +338,7 @@ const AxoStudioPage = ({ onNavigate }) => {
         <div className="axo-studio-panel__feature-grid">
           <div className="axo-studio-panel__copy">
             <p className="axo-studio-panel__eyebrow">{panel.eyebrow}</p>
-            <h2>{panel.title}</h2>
+            <TypingHeading as="h2" text={panel.title} />
             <p className="axo-studio-panel__accent-line axo-studio-panel__accent-line-title">
               {panel.accentLine}
             </p>
@@ -320,7 +356,7 @@ const AxoStudioPage = ({ onNavigate }) => {
     return (
       <div className="axo-studio-panel__copy axo-studio-panel__copy--closing">
         <p className="axo-studio-panel__eyebrow">{panel.eyebrow}</p>
-        <h2>{panel.title}</h2>
+        <TypingHeading as="h2" text={panel.title} />
         <p className="axo-studio-panel__accent-line">{panel.accentLine}</p>
         <p className="axo-studio-panel__body">{panel.description}</p>
         {panel.storeButtons?.length ? (
@@ -358,21 +394,15 @@ const AxoStudioPage = ({ onNavigate }) => {
 
   return (
     <main className="axo-studio-page" ref={pageRef}>
-      <aside className="axo-studio-rail">
-        <div className="axo-studio-rail__brand"></div>
-        <nav className="axo-studio-rail__nav" aria-label="Axo Studio Sections">
-          {studioPanels.map((panel) => (
-            <a
-              key={panel.id}
-              href={`#${panel.id}`}
-              className={activePanelId === panel.id ? "is-active" : undefined}
-            >
-              <span className="axo-studio-rail__dot" />
-              <span>{panel.nav}</span>
-            </a>
-          ))}
-        </nav>
-      </aside>
+      <HomeBurgerMenu
+        items={studioMenuItems}
+        activeItemId="studio-link"
+        isVisible
+        isOpen={isMenuOpen}
+        onToggle={() => setIsMenuOpen((open) => !open)}
+        onClose={() => setIsMenuOpen(false)}
+        onSelectItem={handleSelectMenuItem}
+      />
 
       <section
         className="axo-studio-horizontal-page"
