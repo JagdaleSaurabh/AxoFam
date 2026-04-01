@@ -53,7 +53,7 @@ const Footer = ({ onNavigate }) => {
                 </p>{" "} */}
                 <button
                   type="button"
-                  className="creative-home__brand mb-3"
+                  className="creative-home__brand mb-3 site-footer__brand-image-logo"
                   // onClick={(event) => handleAction(event, "#axofam")}
                 >
                   <img

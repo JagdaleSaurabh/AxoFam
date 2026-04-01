@@ -67,7 +67,7 @@ const Navbar = ({ onNavigate }) => {
           <button
             type="button"
             className="creative-home__brand"
-            // onClick={(event) => handleAction(event, "#axofam")}
+            onClick={handleHomeClick}
           >
             <img
               src="https://res.cloudinary.com/dbtsrjssc/image/upload/v1774967875/enhance_this_iamge_2026033114301_2_xbao7m.webp"

@@ -35,6 +35,9 @@
 .axo-face-logo {
   width: 60px;
 }
+.site-footer__brand-image-logo img {
+  width: 100px;
+}
 .creative-home::before {
   content: "";
   position: fixed;
@@ -237,10 +240,13 @@
   display: inline-grid;
   gap: 0.12em;
   margin: 0;
-  font-family: "Avenir Next Condensed", "Trebuchet MS", sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 0.94;
+  font-family: "Anton";
+  /* font-weight: 600; */
+  letter-spacing: 1.4px;
+  -webkit-text-stroke: 1.3px #000;
+  text-shadow: 3px 3.1px 0 #000;
+  line-height: 1;
+  color: #ffffff;
   white-space: pre-line;
 }
 
@@ -250,14 +256,18 @@
 }
 
 .creative-home__hero-title {
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   /* max-width: 12ch; */
   color: #183246;
   line-height: 1;
 }
 
 .creative-home__hero-title .typing-heading__text {
-  text-shadow: 0 10px 26px rgba(255, 255, 255, 0.3);
+  /* text-shadow: 0 10px 26px rgba(255, 255, 255, 0.3); */
+  -webkit-text-stroke: 1.3px #000;
+  text-shadow: 3px 3.1px 0 #000;
+  line-height: 1.12;
+  color: #ffffff;
 }
 
 .creative-home h2:not(.typing-heading),
@@ -598,8 +608,9 @@
   width: max-content;
   gap: 1.5rem;
   color: #537787;
-  font-family: "Avenir Next Condensed", "Trebuchet MS", sans-serif;
+  font-family: "Anton";
   font-size: 1.15rem;
+
   letter-spacing: 0.22em;
   text-transform: uppercase;
 }
@@ -625,7 +636,7 @@
     minmax(0, 32rem)
     minmax(1.5rem, 5vw)
     minmax(22rem, calc(50vw - 1rem)); */
-  gap: 0;
+  gap: 20px;
   padding: 3.5rem 0 2rem 3.5rem;
 }
 

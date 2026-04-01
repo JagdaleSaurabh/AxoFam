@@ -606,7 +606,6 @@ section.lower .faqs .inner .faq .question .status:before {
 .accordion-item:last-of-type > .accordion-header .accordion-button.collapsed,
 .accordion-button:not(.collapsed) {
   background-color: transparent;
-  font-size: 1.5rem;
   padding: 20px 30px;
 }
 .accordion-item {
@@ -660,7 +659,7 @@ section.lower .lower-wave:after {
   border-radius: 12px !important;
   padding: 26px 34px;
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 20px;
   color: #0b3b4f !important;
   box-shadow: none !important;
 }

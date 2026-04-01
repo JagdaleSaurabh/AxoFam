@@ -84,11 +84,11 @@ const studioPanels = [
 ];
 
 const studioMenuItems = [
-  { id: "home-link", label: "Home", href: "/" },
-  { id: "game-link", label: "Game", href: "/axo-game" },
+  { id: "home-link", label: "AxoFam", href: "/" },
+  { id: "game-link", label: "Play", href: "/axo-game" },
   // { id: "about-link", label: "About", href: "/about" },
   { id: "shop-link", label: "Shop", href: "/shop" },
-  { id: "studio-link", label: "Studio", href: "/axo-studio#home" },
+  { id: "studio-link", label: "Explore", href: "/axo-studio#home" },
   // { id: "faqs", label: "FAQ", href: "/faqs" },
 ];
 

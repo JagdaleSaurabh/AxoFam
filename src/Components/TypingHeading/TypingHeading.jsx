@@ -88,7 +88,7 @@ const TypingHeading = ({
             }
           });
         },
-        { threshold: 0.35 },
+        { threshold: 0.12, rootMargin: "0px 0px -12% 0px" },
       );
 
       observer.observe(heading);

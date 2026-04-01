@@ -9,65 +9,65 @@ gsap.registerPlugin(ScrollTrigger);
 
 const homeSections = [
   {
-    id: "game",
+    id: "play",
     label: "PLAY",
-    eyebrow: "PLAY EVERYWHERE",
-    title: ["Mini missions,", "big Axo energy"],
-    copy: "Fast mobile-friendly fun, colorful rewards, and character-driven gameplay that keeps the Axo world alive beyond the homepage.",
-    accent: "Built to feel light, exciting, and instantly approachable.",
+    eyebrow: "FUN EVERYWHERE",
+    title: ["Playful moments,", "big AXOFAM joy"],
+    copy: "Step into a cheerful world of games, mini adventures, and playful experiences that keep the AXOFAM universe full of fun.",
+    accent: "Built to feel light, colorful, and full of energy.",
     mediaType: "video",
     media:
       "https://res.cloudinary.com/dbtsrjssc/video/upload/v1774618283/Axoquest-Trim-Trim-ezgif.com-gif-maker_1_qo1rew.mp4",
     poster:
-      "https://res.cloudinary.com/dbtsrjssc/image/upload/v1773295360/axo_ninja_olg2gr.webp",
-    tags: ["Mobile play", "Quick loops", "Collectibles", "Adventures"],
-    primaryAction: { label: "Open Game Page", href: "/axo-game" },
+      "https://res.cloudinary.com/dbtsrjssc/image/upload/v1775020427/start-frame2_hkx4dc.webp",
+    tags: ["Games", "Playtime", "Rewards", "Adventures"],
+    primaryAction: { label: "Open Play Page", href: "/axo-game" },
     secondaryAction: { label: "View Shop", href: "#shop" },
     spotlight: [
-      "Snackable gameplay moments",
-      "Reward loops designed for replayability",
-      "A visual style that matches the broader AXOFAM world",
+      "Colorful play experiences",
+      "Fun moments made for coming back again",
+      "A world that feels lively and easy to enjoy",
     ],
   },
   {
     id: "shop",
     label: "SHOP",
     eyebrow: "COLLECT THE WORLD",
-    title: ["Merch that feels", "like part of the story"],
-    copy: "From plushies to books and wearable drops, the shop becomes a curated gallery instead of a simple storefront preview.",
-    accent: "Every item feels like a keepsake from the Axo universe.",
+    title: ["Cute finds from", "the AXOFAM world"],
+    copy: "Discover plush toys, books, clothing, and playful everyday products made to bring the AXOFAM world into real life.",
+    accent: "Every item feels fun, friendly, and full of character.",
     mediaType: "image",
     media:
       "https://res.cloudinary.com/dbtsrjssc/image/upload/v1774438594/remove_middle_text_202603251705_i7pwap.jpg",
-    tags: ["Plushies", "Books", "Apparel", "Accessories"],
+    tags: ["Plush Toys", "Story Books", "Clothing", "Accessories"],
     primaryAction: { label: "Visit Shop", href: "/shop" },
     secondaryAction: { label: "See Studio", href: "#studio" },
     spotlight: [
-      "Story-led product presentation",
-      "Room for featured collections and new drops",
-      "A more premium, immersive retail feel",
+      "Playful collections with character",
+      "Room for featured products and new arrivals",
+      "A warmer and more immersive shop experience",
     ],
   },
   {
     id: "studio",
     label: "EXPLORE",
-    eyebrow: "MAKE IT MOVE",
-    title: ["The studio behind", "the magic"],
-    copy: "Animation, short-form video, music, and motion experiments all come together here to show how AXOFAM keeps expanding.",
+    eyebrow: "BRING IT TO LIFE",
+    title: ["Stories, sound,", "and screen magic"],
+    copy: "Axo Studio brings together videos, audio, ads, and more creative content to keep the AXOFAM world growing in new ways.",
     accent:
-      "This closing section lands as a creative destination, not just a link out.",
+      "A creative closing section that expands the world beyond products and play.",
     mediaType: "video",
     media:
       "https://res.cloudinary.com/dbtsrjssc/video/upload/v1774604793/5k8viC3ApnW34tC9-ezgif.com-gif-maker_pdmryf.mp4",
     poster:
-      "https://res.cloudinary.com/dbtsrjssc/image/upload/v1773317018/banner_image_1_nwmjpd.webp",
-    tags: ["Animation", "Storytelling", "Music", "Motion"],
+      "https://res.cloudinary.com/dbtsrjssc/image/upload/v1775020427/start-frame3_cbvfvc.webp",
+    tags: ["Videos", "Audio", "Ads", "Coming Soon"],
     primaryAction: { label: "Open Studio", href: "/axo-studio#home" },
     secondaryAction: { label: "Back to Top", href: "#axofam" },
     spotlight: [
-      "A showcase for motion and cinematic craft",
-      "More confidence in the brand's creative depth",
-      "A stronger final CTA before the footer",
+      "A showcase for creative AXOFAM content",
+      "A stronger sense of story and world-building",
+      "A polished final destination before the footer",
     ],
   },
 ];
@@ -166,7 +166,8 @@ const HomepageCreative = ({ onNavigate }) => {
           ease: "power3.out",
           scrollTrigger: {
             trigger: panel,
-            start: "top 72%",
+            start: "top 88%",
+            once: true,
           },
         });
 
@@ -178,7 +179,8 @@ const HomepageCreative = ({ onNavigate }) => {
           ease: "power3.out",
           scrollTrigger: {
             trigger: panel,
-            start: "top 70%",
+            start: "top 88%",
+            once: true,
           },
         });
 
@@ -190,7 +192,8 @@ const HomepageCreative = ({ onNavigate }) => {
           ease: "power2.out",
           scrollTrigger: {
             trigger: panel,
-            start: "top 68%",
+            start: "top 88%",
+            once: true,
           },
         });
 
@@ -202,7 +205,8 @@ const HomepageCreative = ({ onNavigate }) => {
           ease: "power2.out",
           scrollTrigger: {
             trigger: panel,
-            start: "top 68%",
+            start: "top 88%",
+            once: true,
           },
         });
       });
@@ -365,7 +369,7 @@ const HomepageCreative = ({ onNavigate }) => {
                 muted
                 loop
                 playsInline
-                poster={homeSections[0].poster}
+                poster="https://res.cloudinary.com/dbtsrjssc/image/upload/v1775020427/start-frame1_aoossn.webp"
                 src="https://res.cloudinary.com/dbtsrjssc/video/upload/v1774962045/Blue_teddy_standing_202603311202-ezgif_fnbmlf.mp4"
               />
             </div>
